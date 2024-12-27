@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us</title>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+
+    <style>
+     
+	   /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: url('bgtest.avif') ;
+            background-size: cover;
+           
+        }
+
+    /* Navigation Bar */
+        nav {
+            background-color: #000;
+            padding: 10px 20px;
+            font-family: "Times New Roman", Times, serif;
+            position: fixed;
+            top: 0;
+            width: 100vw; /* Ensure it spans the full viewport width */
+            z-index: 1000;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            padding: 20px 60px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+        }
+
+ .logo {
+            height: 60px;
+            vertical-align: middle;
+        }
+
+@media (max-width: 768px) {
+    /* Adjust navigation bar for mobile screens */
+    nav {
+        padding: 0px 2px; /* Further reduce padding */
+    }
+
+    .nav-link {
+        font-size: 9px; /* Reduce font size even more for mobile */
+        padding: 2px 3px; /* Reduced padding for nav links */
+    }
+
+    .logo {
+        height: 20px; /* Reduce logo size even further */
+    }
+	}
+
+        /* Container Styles */
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 80vh; /* Adjusted to ensure content is vertically centered */
+            
+            padding: 20px;
+            position: relative;
+            margin-top: 20px; /* Adjusted for spacing */
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+
+        /* Contact Form Styles */
+        .contact-form {
+           
+            padding: 20px 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .contact-form .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+		
+		
+		
+		
+		
+		
+		
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+        textarea {
+            height: 100px;
+        }
+
+        .submit-button {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+            font-size: 16px;
+        }
+
+        .submit-button:hover {
+            background: #45a049;
+        }
+
+        
+
+        .icon-container i {
+            font-size: 50px;
+            color: pink;
+            transition: all 0.3s ease-in-out;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        .icon-container i:hover {
+            font-size: 60px;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.7),
+                        0 0 30px rgba(0, 0, 0, 0.6),
+                        0 0 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Custom Clear Button Styles */
+        .button-container {
+            position: relative; /* To position the icon absolutely within */
+            margin-top: 20px;
+            width: 150px; /* Match the button width */
+        }
+
+        .button-container button {
+            width: 150px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            background: #e62222;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+            transition: 200ms;
+            position: relative; /* To position the icon absolutely */
+            overflow: hidden; /* To hide overflowing content during transitions */
+        }
+
+        .button-container button span.text {
+            transform: translateX(35px);
+            color: white;
+            font-weight: bold;
+            transition: 200ms;
+            z-index: 1; /* Ensure text is above the icon */
+        }
+
+        .button-container button .icon {
+            position: absolute;
+            left: 0;
+            top: 5px; /* Center vertically within the button */
+            border-left: 1px solid #c41b1b;
+            transform: translateX(110px);
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 200ms;
+             /* Ensure background doesn't cover button */
+        }
+
+        .button-container button svg {
+            width: 15px;
+            fill: #eee;
+            transition: transform 200ms;
+        }
+
+        .button-container button:hover {
+            background: #ff3636;
+        }
+
+        .button-container button:hover span.text {
+            color: transparent;
+        }
+
+        .button-container button:hover .icon {
+            width: 150px;
+            border-left: none;
+            transform: translateX(0);
+            background: #ff3636; /* Optional: Change background during hover */
+        }
+
+        .button-container button:focus {
+            outline: none;
+        }
+
+        .button-container button:active .icon svg {
+            transform: scale(0.8);
+        }
+
+        /* Optional: Adjusting link styles */
+        a {
+            position: relative;
+            display: inline-block;
+            padding: 25px 30px;
+        
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: 0.5s;
+            letter-spacing: 4px;
+            overflow: hidden;
+			
+        }
+@media (max-width: 768px) {
+    /* Reset some base styles for smaller screens */
+    
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	body {
+       
+        background-size: cover;
+    }
+
+
+    /* Container Styles */
+    .container {
+        padding: 1px; /* Adjust padding */
+       
+        margin-top: 2px;
+    }
+
+    /* Contact Form */
+    .contact-form {
+        padding: 1px; /* Reduce padding for mobile */
+        max-width: 100%; /* Allow the form to take full width */
+        width: 90%; /* Ensure form fits well */
+        margin-top: 2px; /* Add margin to space out from other elements */
+    }
+
+    .contact-form .header {
+        font-size: 20px; /* Reduce header font size */
+        margin-bottom: 10px; /* Reduced margin */
+    }
+
+    input, textarea {
+        font-size: 14px; /* Smaller font size for inputs */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+
+    .submit-button {
+        font-size: 14px; /* Smaller font size for button */
+        padding: 8px 16px; /* Adjust padding */
+    }
+
+    /* Icon Container */
+    .icon-container i {
+        font-size: 40px; /* Adjust icon size for mobile */
+        margin: 10px; /* Add some space around the icons */
+    }
+
+    /* Custom Button */
+    .button-container {
+        width: 100%; /* Make the button container span full width */
+        margin-top: 15px; /* Add some margin between the button and form */
+    }
+
+    .button-container button {
+        width: 100%; /* Full-width button on mobile */
+        height: 50px; /* Ensure button is tall enough */
+        font-size: 16px; /* Smaller font size for mobile */
+    }
+
+    .button-container button span.text {
+        transform: translateX(0); /* Adjust text position for mobile */
+    }
+
+    .button-container button .icon {
+        transform: translateX(0); /* Adjust icon position */
+        width: 50px; /* Smaller icon size */
+    }
+
+    .button-container button svg {
+        width: 15px; /* Smaller SVG icon size */
+    }
+
+    /* Optional: Adjusting link styles */
+    a {
+        padding: 10px 15px; /* Reduce link padding */
+        font-size: 14px; /* Smaller font size for links */
+        letter-spacing: 2px; /* Reduce letter spacing */
+    }
+
+    /* Ensuring the page is responsive for different screen orientations */
+    .contact-form, .button-container {
+        width: 100%; /* Ensure containers take full width */
+        padding: 15px; /* Padding adjustments for smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+    </style>
+</head>
+<body>
+   <header>
+        <nav>
+            <table width="100%" bgcolor="#000" cellpadding="10">
+                <tr>
+                    <td align="center">
+                        <a href="home page.html" class="nav-link">Home</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="about us.html" class="nav-link">About Us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="bmc cart logo.png" alt="Logo" class="logo">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="contact us.html" class="nav-link">Contact Us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="booknow.html" class="nav-link">BOOK NOW</a>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <div class="header">Contact Us</div>
+            <form id="contactForm" action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-button">Submit</button>
+            </form>
+        </div>
+
+        <!-- Social Media Icons -->
+        <div class="icon-container">
+            <a href="mailto:your-email@example.com"><i class="fa fa-envelope" id="gmail"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank"><i class="fa fa-instagram" id="instagram"></i></a>
+            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fa fa-facebook-square" id="facebook"></i></a>
+        </div>
+
+        <!-- Custom Clear Button -->
+        <div class="button-container">
+            <button id="clear-button">
+                <span class="text">Clear</span>
+                <div class="icon">
+                    <!-- You can replace the SVG below with any icon you prefer -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M5 13l4 4L19 7" stroke="#eee" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript to Handle Button Functionality -->
+    <script>
+        document.getElementById('clear-button').addEventListener('click', function() {
+            // Clear all input and textarea fields within the form
+            const form = document.getElementById('contactForm');
+            form.reset();
+        });
+    </script>
+</body>
+</html>

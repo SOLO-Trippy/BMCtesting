@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Cart Tours</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Raleway', sans-serif;
+            background-color: #ffffff; /* White background for the body */
+        }
+
+        /* Navigation bar styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            height: 50px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            padding: 10px 15px;
+        }
+
+        nav a::before,
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #0077be);
+            transition: all 0.3s;
+        }
+
+        nav a::before {
+            top: 0;
+            left: 0;
+        }
+
+        nav a::after {
+            bottom: 0;
+            right: 0;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+            box-shadow: 0 0 5px #0077be,
+                        0 0 25px #0077be,
+                        0 0 50px #0077be,
+                        0 0 200px #0077be;
+        }
+
+        nav a:hover::before,
+        nav a:hover::after {
+            width: 100%;
+            background: #0077be;
+        }
+
+        .logo {
+            display: block;
+            width: 100px;
+            height: auto;
+        }
+
+        /* Page container */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto 0; /* Adjust margin-top to account for the navbar height */
+            padding: 20px;
+            background-color: #ffffff; /* White background for the container */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .header img.logo-resize {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            /* Add size control here */
+            width: 200px; /* Default width, adjust as needed */
+            /* height: 100px; Optional, adjust if you need specific height */
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            background-color: #ffffff; /* White background for gallery items */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item .description {
+            padding: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .gallery-item .description p {
+            font-size: 1em;
+            color: #333;
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Activities.html">Activities</a>
+        <img src="logo.png" alt="Logo" class="logo">
+        <a href="ContactUs.html">Contact Us</a>
+        <a href="AboutUs.html">About Us</a>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <div class="header">
+            <h1>Exploring the Island on a Golf Cart</h1>
+            <img src="golf logo.jpg" alt="Golf Cart Logo" class="logo-resize">
+            <p>
+                Exploring the island on a golf cart offers a unique and fun way to enjoy your surroundings. With the freedom to move at your own pace, you can take in the island's stunning landscapes, discover hidden beaches, and explore scenic trails that larger vehicles can't access. It's a great way to bond with family and friends, share laughs, and create memorable moments while navigating through picturesque routes. Golf carts provide an open-air experience, allowing you to feel the breeze and enjoy the sounds of nature, making your island adventure both relaxing and exciting.
+            </p>
+        </div>
+
+        <div class="gallery">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="golf-cart1.jpg" alt="Golf Cart Ride 1">
+                <div class="description">
+                    <p>Explore the scenic routes in style!</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="golf-cart2.jpg" alt="Golf Cart Ride 2">
+                <div class="description">
+                    <p>Enjoy the beautiful landscapes with ease.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="golf-cart3.jpg" alt="Golf Cart Ride 3">
+                <div class="description">
+                    <p>Perfect for a family outing on the island.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="golf-cart4.jpg" alt="Golf Cart Ride 4">
+                <div class="description">
+                    <p>Discover hidden gems around every corner.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="golf-cart5.jpg" alt="Golf Cart Ride 5">
+                <div class="description">
+                    <p>Take in the fresh air on a breezy ride.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="golf-cart6.jpg" alt="Golf Cart Ride 6">
+                <div class="description">
+                    <p>A relaxing way to explore the island at your own pace.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 7 -->
+            <div class="gallery-item">
+                <img src="golf-cart7.jpg" alt="Golf Cart Ride 7">
+                <div class="description">
+                    <p>Great for a fun day out with friends.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 8 -->
+            <div class="gallery-item">
+                <img src="golf-cart8.jpg" alt="Golf Cart Ride 8">
+                <div class="description">
+                    <p>Experience the island like never before.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 9 -->
+            <div class="gallery-item">
+                <img src="golf-cart9.jpg" alt="Golf Cart Ride 9">
+                <div class="description">
+                    <p>Unwind and enjoy the sights and sounds of nature.</p>
+                </div>
+            </div>
+
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
+
+</body>
+</html>

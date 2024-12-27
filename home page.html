@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+<html lang="en">
+<head>
+    
+    
+    <title>HOME</title>
+    <style>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            background-image: url('bgtest.avif');
+background-size: 120%; /* Increase to zoom out */
+background-position: center; /* Keeps the background centered */
+            padding-top: 90px; /* Adjust based on the height of the nav bar */
+             font-family: "Merriweather", serif;
+        }
+		
+		
+		@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+  .selection-container {
+    transform: scale(0.7); /* Adjust the scaling factor as needed */
+    transform-origin: top left; /* Adjust the origin for scaling if necessary */
+  }
+}
+		
+input.input {
+  overflow: visible; /* or auto */
+  max-width: 300px; /* or remove maxWidth */
+}
+
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  .container {
+    text-align: center;
+  }
+}		
+		
+		
+		
+		
+		
+		
+
+        /* Navigation Bar */
+        nav {
+            background-color: #000;
+            padding: 10px 20px;
+            font-family: "Times New Roman", Times, serif;
+            position: fixed;
+            top: 0;
+            width: 100vw; /* Ensure it spans the full viewport width */
+            z-index: 1000;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            padding: 5px 100px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+        }
+
+        .logo {
+            height: 50px;
+            vertical-align: middle;
+        }
+
+@media (max-width: 768px) {
+    /* Adjust navigation bar for mobile screens */
+     body {
+       
+        background-size: cover;
+    }
+	
+	
+	
+	
+	nav {
+
+        padding: 5px 0px; /* Further reduce padding */
+    }
+
+    .nav-link {
+        font-size: 9px; /* Reduce font size even more for mobile */
+        padding: 4px 1px; /* Reduced padding for nav links */
+    }
+
+    .logo {
+        height: 30px; /* Reduce logo size even further */
+    }
+
+    /* Hide the navigation links by default on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #000;
+    }
+
+    /* Show links when the hamburger menu is clicked */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* Adjust hamburger menu size */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        color: white;
+        font-size: 2px; /* Slightly reduce hamburger size */
+        z-index: 1001;
+    }
+
+    /* Hamburger menu bars */
+    .hamburger div {
+        width: 28px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s;
+    }
+
+    .nav-links a {
+        padding: 8px;
+        font-size: 14px; /* Reduce link font size */
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .nav-links a:hover {
+        color: #ffcc00; /* Hover color */
+    }
+
+    /* Adjust hamburger active state */
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg);
+        transform-origin: 50% 50%;
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg);
+        transform-origin: 50% 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* Container Styling */
+.container {
+   padding: 20px;
+text-align: center;
+color: pink; /* Set text color to pink */
+
+   
+}
+
+        /* Selection Section Styling */
+        .selection-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh;
+            flex-wrap: wrap; /* Ensure responsiveness */
+        }
+
+        /* Card Styles Scoped to Selection Section */
+        .selection-container .card {
+            position: relative;
+            width: 300px;
+            height: 550px;
+            background: white; /* Temporary background, will be overridden by image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px; /* Space between cards */
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .selection-container .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(315deg, #03a9f4, #ff0058);
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .selection-container .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(315deg, #03a9f4, #ff0058);
+            filter: blur(20px);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .selection-container .card b {
+            position: absolute;
+            inset: 6px;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2;
+            border-radius: 5px;
+        }
+
+        .selection-container .card img {
+            position: absolute;
+            z-index: 3;
+            width: 100%;
+            height: 60%;
+            object-fit: cover;
+            opacity: 0.25;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .selection-container .card:hover img {
+            transform: translateY(-70px);
+            opacity: 0.9;
+        }
+
+        .selection-container .card .content {
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            transform: scale(0);
+            transition: transform 0.5s ease, bottom 0.5s ease;
+        }
+
+        .selection-container .card:hover .content {
+            transform: scale(1);
+            bottom: 25px;
+        }
+
+        .selection-container .card .content .title {
+            color: white;
+            font-weight: 500;
+            line-height: 1em;
+            font-size: 1em;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        /* Input Styling */
+        .input {
+            background-color: pink;
+            border: 1ex solid none;
+            border-top-width: 1.7em;
+            margin: 0;
+            padding: 0;
+            color: green;
+            word-wrap: break-word;
+            outline: 7px solid #383838;
+            height: 30px;
+            font-size: 17px;
+            text-align: center;
+            transition: all 1s;
+            max-width: 200px;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .input:hover {
+            border-top-width: 0.2em;
+            background-color: #f1e8e8;
+        }
+
+        .input:focus {
+            border-top-width: 0.2em;
+            background-color: #f1e8e8;
+        }
+/* Footer Styling */
+footer {
+    background: black;
+    background-size: 100%; /* Increase to zoom out */
+    padding: 40px;
+    color: yellow;
+    border: none; /* Ensures no border is applied */
+}
+
+/* Footer Container */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the footer content */
+    border: none; /* Ensure no border is applied */
+}
+
+/* Footer Sections */
+.footer-section {
+    flex: 1;
+    min-width: 250px; /* Ensures sections don't get too narrow */
+    margin: 20px;
+    
+}
+
+        /* Section Titles */
+        .footer-section h3 {
+            color: yellow;
+            margin-bottom: 15px;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* Contact Information */
+        .contact-us p {
+            color: yellow;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Placeholder Content */
+        .placeholder p {
+            color: yellow;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Social Media Icons */
+        .footer-wrapper {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-wrapper .icon {
+            position: relative;
+            background: #000000;
+            border-radius: 50%;
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .footer-wrapper .icon i {
+            color: #fff;
+        }
+
+        /* Tooltip Styling */
+        .footer-wrapper .tooltip {
+            position: absolute;
+            top: -40px;
+            font-size: 14px;
+            background: #0000FF; /* Changed to blue for better visibility */
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform: translateY(-10px);
+            white-space: nowrap;
+            z-index: 1;
+        }
+
+        /* Tooltip Arrow */
+        .footer-wrapper .tooltip::before {
+            position: absolute;
+            content: "";
+            height: 8px;
+            width: 8px;
+            background: #0000FF; /* Match tooltip background */
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+        /* Hover Effects */
+        .footer-wrapper .icon:hover .tooltip {
+            top: -50px;
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .footer-wrapper .icon:hover .tooltip::before {
+            background: #0000FF;
+        }
+
+        /* Specific Hover Styles for Each Social Media */
+        .footer-wrapper .facebook:hover,
+        .footer-wrapper .facebook:hover .tooltip::before {
+            background: #1877f2;
+        }
+
+        .footer-wrapper .instagram:hover,
+        .footer-wrapper .instagram:hover .tooltip::before {
+            background: #e4405f;
+        }
+
+        .footer-wrapper .whatsapp:hover,
+        .footer-wrapper .whatsapp:hover .tooltip::before {
+            background: #25D366;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .selection-container {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .selection-container .card {
+                width: 1900%;
+                height: 200px;
+
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                margin: 10px 0;
+            }
+        }
+
+        /* Additional Styling for Enhanced Layout */
+        /* Remove table styling in nav and use flexbox instead for better responsiveness */
+        nav table {
+            width: 100%;
+            background-color: #000;
+            padding: 10px;
+        }
+
+        nav td {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    </style>
+    <!-- Include Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+     <header>
+        <nav>
+            <table width="100%" bgcolor="#000" cellpadding="10">
+                <tr>
+                    <td align="center">
+                        <a href="home page.html" class="nav-link">Home</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="about us.html" class="nav-link">About Us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="bmc cart logo.png" alt="Logo" class="logo">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="contact us.html" class="nav-link">Contact Us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="booknow.html" class="nav-link">BOOK NOW</a>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1 class="text">
+            <span class="letter letter-1">A</span>
+            <span class="letter letter-2">C</span>
+            <span class="letter letter-3">T</span>
+            <span class="letter letter-4">I</span>
+            <span class="letter letter-1">V</span>
+            <span class="letter letter-2">I</span>
+            <span class="letter letter-3">E</span>
+            <span class="letter letter-4">S</span>
+        </h1>
+
+        <!-- Input Field -->
+        <input type="text" class="input" value="BMC TO THE WORLD" readonly>
+    </div>
+
+    <!-- Selection Section with Card Styles -->
+    <div class="selection-container">
+        <!-- Jet Skis Card -->
+        <a href="jetski.html">
+            <div class="card">
+                <b></b>
+                <img src="bmc jetski logo.png" alt="Jet Skis">
+                <div class="content">
+                    <div class="title">Jet Skis</div>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Golf Carts Card -->
+        <a href="golf cart.html">
+            <div class="card">
+                <b></b>
+                <img src="bmc cart logo.png" alt="Golf Carts">
+                <div class="content">
+                    <div class="title">Golf Carts</div>
+                </div>
+            </div>
+        </a>
+        
+        <!-- Clear Kayak Card -->
+        <a href="clear kayak.html">
+            <div class="card">
+                <b></b>
+                <img src="bmc kayak logo.png" alt="Clear Kayak">
+                <div class="content">
+                    <div class="title">Clear Kayak</div>
+                </div>
+            </div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Left: Contact Us -->
+            <div class="footer-section contact-us">
+                <h3>Contact Us</h3>
+                <p>Grand Turk<br>Turks and Caicos Island, TKCA 1ZZ</p>
+                <p>Phone: (649) 341-5788</p>
+                <p>Email: info@example.com</p>
+            </div>
+
+            <!-- Middle: Social Media -->
+            <div class="footer-section social-media">
+                <h3>SOCIALS</h3>
+                <ul class="footer-wrapper">
+                    <!-- Facebook Icon -->
+                    <li class="icon facebook">
+                        <a href="https://www.facebook.com" target="_blank">
+                            <i class="fab fa-facebook fa-lg"></i>
+                        </a>
+                        <div class="tooltip">Facebook</div>
+                    </li>
+
+                    <!-- Instagram Icon -->
+                    <li class="icon instagram">
+                        <a href="https://www.instagram.com" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i>
+                        </a>
+                        <div class="tooltip">Instagram</div>
+                    </li>
+
+                    <!-- WhatsApp Icon -->
+                    <li class="icon whatsapp">
+                        <a href="https://wa.me/16492433309" target="_blank">
+                            <i class="fab fa-whatsapp fa-lg"></i>
+                        </a>
+                        <div class="tooltip">WhatsApp</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right: Placeholder -->
+            <div class="footer-section placeholder">
+                <h3>Additional Info</h3>
+                <p>Placeholder content here.</p>
+                <p>You can add links, information, or any other content as needed.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+

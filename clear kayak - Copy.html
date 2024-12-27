@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Kayak Tours</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Raleway', sans-serif;
+            background-color: #ffffff; /* White background for the body */
+        }
+
+        /* Navigation bar styles */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: rgba(51, 51, 51, 0.8);
+            color: #fff;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            height: 50px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            padding: 10px 15px;
+        }
+
+        nav a::before,
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #0077be);
+            transition: all 0.3s;
+        }
+
+        nav a::before {
+            top: 0;
+            left: 0;
+        }
+
+        nav a::after {
+            bottom: 0;
+            right: 0;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+            box-shadow: 0 0 5px #0077be,
+                        0 0 25px #0077be,
+                        0 0 50px #0077be,
+                        0 0 200px #0077be;
+        }
+
+        nav a:hover::before,
+        nav a:hover::after {
+            width: 100%;
+            background: #0077be;
+        }
+
+        .logo {
+            display: block;
+            width: 100px;
+            height: auto;
+        }
+
+        /* Page container */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto 0; /* Adjust margin-top to account for the navbar height */
+            padding: 20px;
+            background-color: #ffffff; /* White background for the container */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: #333;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .header img.logo-resize {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            /* Add size control here */
+            width: 200px; /* Default width, adjust as needed */
+            /* height: 100px; Optional, adjust if you need specific height */
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            background-color: #ffffff; /* White background for gallery items */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item .description {
+            padding: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .gallery-item .description p {
+            font-size: 1em;
+            color: #333;
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="Home.html">Home</a>
+        <a href="Activities.html">Activities</a>
+        <img src="logo.png" alt="Logo" class="logo">
+        <a href="ContactUs.html">Contact Us</a>
+        <a href="AboutUs.html">About Us</a>
+    </nav>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <div class="header">
+            <h1>Clear Kayak Adventures</h1>
+            <img src="clearkayak-logo.jpg" alt="Clear Kayak Logo" class="logo-resize">
+            <p>
+                Discover the beauty of underwater worlds with our clear kayak tours. Glide over tranquil waters in a transparent kayak and marvel at the vibrant aquatic life and crystal-clear surroundings beneath you. Our clear kayak tours offer a unique and immersive way to explore serene lakes, scenic rivers, and enchanting coastal areas. Ideal for nature lovers and adventure seekers alike, you'll experience the thrill of kayaking while enjoying unobstructed views of the natural world below. Join us for an unforgettable journey in the heart of nature.
+            </p>
+        </div>
+
+        <div class="gallery">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride1.jpg" alt="Clear Kayak Ride 1">
+                <div class="description">
+                    <p>Experience the underwater world in clarity!</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride2.jpg" alt="Clear Kayak Ride 2">
+                <div class="description">
+                    <p>Glide over serene waters and discover hidden wonders.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride3.jpg" alt="Clear Kayak Ride 3">
+                <div class="description">
+                    <p>A unique adventure for nature enthusiasts.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride4.jpg" alt="Clear Kayak Ride 4">
+                <div class="description">
+                    <p>See fish and aquatic plants up close.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride5.jpg" alt="Clear Kayak Ride 5">
+                <div class="description">
+                    <p>Enjoy a peaceful and immersive experience on the water.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride6.jpg" alt="Clear Kayak Ride 6">
+                <div class="description">
+                    <p>Discover tranquil and picturesque locations.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 7 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride7.jpg" alt="Clear Kayak Ride 7">
+                <div class="description">
+                    <p>An adventure that combines thrill and relaxation.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 8 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride8.jpg" alt="Clear Kayak Ride 8">
+                <div class="description">
+                    <p>Explore the beauty of nature from a new perspective.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 9 -->
+            <div class="gallery-item">
+                <img src="clearkayak-ride9.jpg" alt="Clear Kayak Ride 9">
+                <div class="description">
+                    <p>Unwind and marvel at the underwater scenery.</p>
+                </div>
+            </div>
+
+            <!-- Add more gallery items as needed -->
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+
+    <style>	
+       /* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    align-items: center;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Merriweather", serif;
+    background: url('bgtest.avif') center/cover no-repeat fixed;
+}
+
+/* Header styles */
+header {
+    background-color: #000;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #000;
+    padding: 25px 20px;
+    font-family: "Times New Roman", Times, serif;
+    position: fixed;
+    top: 0;
+    width: 100vw; /* Ensure it spans the full viewport width */
+    z-index: 1000;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    padding: 20px 60px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #fff;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.logo {
+    height: 50px;
+    vertical-align: center;
+}
+
+/* Main Content */
+main {
+    margin: 100px auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(240, 240, 240, 0.8);
+}
+
+h1 {
+    text-align: center;
+    color: #000;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Flip Cards */
+.activity-highlights {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.flip-card {
+    background-color: transparent;
+    width: 190px;
+    height: 254px;
+    perspective: 1000px;
+    font-family: sans-serif;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 145%;
+    height: 130%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid coral;
+    border-radius: 1rem;
+}
+
+.flip-card-front {
+    background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%, rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+    color: coral;
+}
+
+.flip-card-back {
+    background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%, bisque 40%, rgb(255, 185, 160) 78%);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.flip-card h2 {
+    margin-top: 20px;
+}
+
+.flip-card p {
+    padding: 10px;
+    color: #333;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    /* Adjust navigation bar for mobile screens */
+    nav {
+        padding: 1px 2px; /* Further reduce padding */
+    }
+
+    .nav-link {
+        font-size: 9px; /* Reduce font size even more for mobile */
+        padding: 2px 3px; /* Reduced padding for nav links */
+    }
+
+    .logo {
+        height: 20px; /* Reduce logo size even further */
+    }
+ html, body {
+        height: 100%; /* Set both html and body to 100% height */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+
+
+
+
+    /* Main content layout */
+    main {
+        margin-top: 80px; /* Account for fixed navbar height */
+        padding: 1px;
+        max-width: 300%;
+        justify-content: flex-start;
+    }
+
+    h1 {
+        font-size: 18px; /* Smaller heading for mobile */
+        margin-bottom: 15px;
+    }
+
+    /* Flip Cards - Adjust layout for mobile */
+    .activity-highlights {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+
+    .flip-card {
+        width: 150px; /* Smaller card width for mobile */
+        height: 200px; /* Smaller card height */
+        margin: 10px 0;
+    }
+
+    .flip-card-front, .flip-card-back {
+        width: 140%; /* Make cards fit within the smaller width */
+        height: 110%;
+    }
+
+    /* Card layout adjustments */
+    .card {
+        width: 150px; /* Adjust card width */
+        height: 20px; /* Adjust card height */
+        padding: 1rem;
+    }
+
+    .card-avatar {
+        --size: 5px; /* Smaller avatar size */
+        margin-bottom: 0.8rem;
+    }
+
+    /* Card social section */
+    .card-social {
+        flex-direction: column; /* Stack social icons vertically */
+        transform: translateY(0);
+    }
+
+    .card-social__item svg {
+        height: 1px; /* Smaller social icon */
+        width: 16px;
+    }
+
+    /* Flip card hover effects */
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+}
+
+
+        /* CSS for Card Section */
+        .card { 
+            width: 190px;
+            height: 254px;
+            background: #f5f5f5;
+            padding: 2rem 1.5rem;
+            transition: box-shadow .3s ease, transform .2s ease;
+            margin-top: 20px;
+        }
+
+        .card-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform .2s ease, opacity .2s ease;
+        }
+
+
+
+
+
+
+
+        .card-avatar {
+    --size: 60px;
+    background: linear-gradient(to top, #f1e1c1 0%, #fcbc97 100%);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    transition: transform .2s ease;
+    margin-bottom: 1rem;
+    background-size: cover;
+}
+
+/* Avatar 1 (WaterSport) */
+.card-avatar-watersport {
+    background-image: url('bmc jetski logo.png'); /* Add image URL for Watersport avatar here */
+}
+
+/* Avatar 2 (Golf Cart) */
+.card-avatar-golfcart {
+    background-image: url('bmc cart logo.png'); /* Add image URL for Golf Cart avatar here */
+}
+
+/* Avatar 3 (Kayak) */
+.card-avatar-kayak {
+    background-image: url('bmc kayak logo.png'); /* Add image URL for Kayak avatar here */
+}
+
+
+
+
+
+
+
+
+
+
+
+        .card-social {
+            transform: translateY(200%);
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            opacity: 0;
+            transition: transform .2s ease, opacity .2s ease;
+        }
+
+        .card-social__item {
+            list-style: none;
+        }
+
+        .card-social__item svg {
+            display: block;
+            height: 18px;
+            width: 18px;
+            fill: #515F65;
+            cursor: pointer;
+            transition: fill 0.2s ease ,transform 0.2s ease;
+        }
+
+        .card-title {
+            color: #333;
+            font-size: 1.5em;
+            font-weight: 600;
+            line-height: 2rem;
+        }
+
+        .card-subtitle {
+            color: #859ba8;
+            font-size: 0.8em;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 50px #23232333;
+        }
+
+        .card:hover .card-info {
+            transform: translateY(-5%);
+        }
+
+        .card:hover .card-social {
+            transform: translateY(100%);
+            opacity: 1;
+        }
+
+        .card-social__item svg:hover {
+            fill: #232323;
+            transform: scale(1.1);
+        }
+
+        .card-avatar:hover {
+            transform: scale(1.1);
+        }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <table width="100%" bgcolor="#000" cellpadding="10">
+                <tr>
+                    <td align="center">
+                        <a href="home page.html" class="nav-link">Home</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="about us.html" class="nav-link">About Us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="bmc cart logo.png" alt="Logo" class="logo">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="contact us.html" class="nav-link">Contact Us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="booknow.html" class="nav-link">BOOK NOW</a>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <main>
+        <h1>About Us</h1>
+        <div class="content">
+            <p>Welcome to our company! We are dedicated to providing the best service possible. Our team is passionate about our mission and values. We look forward to working with you!</p>
+        </div>
+
+        <div class="homepage-content">
+            <h1>BMC Water Sports & Rentals</h1>
+            <p>Experience the best of Grand Turk with BMC, your premier destination for exciting water sports and rentals. Founded by Chi, Meach, and Camy, our family-owned business is dedicated to making your island adventure unforgettable. Whether you're exploring the crystal-clear waters in a kayak, zipping through the waves on a jet ski, or cruising around in a comfortable golf cart, BMC has everything you need for the ultimate island experience.</p>
+
+            <div class="activity-highlights">
+                <!-- Clear Kayak Flip Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="bmc kayak logo.png" alt="Clear Kayak">
+                            <h2>Clear Kayak Tours</h2>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Crystal view clear kayak Drone Photography is an amazing experience that is awaiting your arrival here in Grand Turk. Our team offers exquisite photos and videos that exceed your expectations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Golf Cart Flip Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="bmc cart logo.png" alt="Golf Cart">
+                            <h2>Golf Cart Rentals</h2>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Explore the island at your own pace with our comfortable and easy-to-drive golf carts. Rent one for a few hours or the whole day for an unforgettable island adventure.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Jet Ski Flip Card -->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="bmc jetski logo.png" alt="Jet Ski">
+                            <h2>Jet Ski Rentals</h2>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Feel the thrill of speeding across the ocean waves with our high-powered jet ski rentals. Whether you're looking for an adrenaline rush or a scenic ride, we've got you covered.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div style="height: 200px;"></div>
+		<div style="background-color: lightblue; padding: 50px 0; width: 100vw; text-align: center;">
+    <h1 style="font-size: 90px; font-weight: bold; margin: 0;">	SOCIALS</h1>
+</div>
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<div style="margin-top: 0.5px;">	
+    <div style="height: 10px;"></div>
+    <!-- WaterSport Card -->
+    <div class="card">
+        <div class="card-info">
+            <!-- Avatar for WaterSport -->
+            <div class="card-avatar card-avatar-watersport"></div>
+            <h2 class="card-title">WATERSPORT</h2>
+            <p class="card-subtitle">BMC WATERSPORT</p>
+            <!-- Instagram link -->
+            <p>
+                <a href="https://www.instagram.com/crystalview_kayak?igsh=MXFhZXZrc2FmdWJxcA==" target="_blank" style="text-decoration: none; color: black;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 20px; vertical-align: middle;"/> 
+                    @WATERSPORT
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 0.5px;">	
+    <div style="height: 10px;"></div>
+    <!-- Golf Cart Card -->
+    <div class="card">
+        <div class="card-info">
+            <!-- Avatar for Golf Cart -->
+            <div class="card-avatar card-avatar-golfcart"></div>
+            <h2 class="card-title">GOLF CART</h2>
+            <p class="card-subtitle">GOLF CART RENTALS</p>
+            <!-- Instagram link -->
+            <p>
+                <a href="https://www.instagram.com/bmc.rentals?igsh=MTE1eGJxemg4cGN3ZA==" target="_blank" style="text-decoration: none; color: black;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 20px; vertical-align: middle;"/> 
+                    @GOLF CART
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 0.5px;">	
+    <div style="height: 10px;"></div>
+    <!-- Kayak Card -->
+    <div class="card">
+        <div class="card-info">
+            <!-- Avatar for Kayak -->
+            <div class="card-avatar card-avatar-kayak"></div>
+            <h2 class="card-title">KAYAK</h2>
+            <p class="card-subtitle">CRYSTAL VIEW KAYAK</p>
+            <!-- Instagram link -->
+            <p>
+                <a href="https://www.instagram.com/crystalview_kayak?igsh=MXFhZXZrc2FmdWJxcA==" target="_blank" style="text-decoration: none; color: black;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 20px; vertical-align: middle;"/> 
+                    @KAYAK
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div style="margin-top: 20px;">
+<div class="mapouter"><div class="gmap_canvas"><iframe src="https://maps.google.com/maps?q=grnad%20turk%20&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" style="width: 1010px; height: 450px;"></iframe><style>.mapouter{display:table;}.gmap_canvas{overflow:hidden;position:relative;height:450px;width:1010px;background:#fff;}</style><a href="https://www.taxuni.com/wisconsin-income-tax-calculator/">Wisconsin Income Tax Calculator</a><style>.gmap_canvas iframe{position:relative !important;z-index:2 !important;}.gmap_canvas a{color:#fff !important;position:absolute !important;top:0 !important;left:0 !important;z-index:0 !important;}</style></div></div>
+</div>
+
+
+
+
+    </main>
+</body>
+
+</html>
+
+
+
+
+
+
+

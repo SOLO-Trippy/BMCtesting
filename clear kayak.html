@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear Kayak Tours</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap">
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Raleway', sans-serif;
+           background: url('bgtest.avif') center/cover no-repeat fixed;
+        }
+
+        /* Navigation bar styles */
+        nav {
+            background-color: #000;
+            padding: 10px 0;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #fff;
+            text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            border-radius: 5px;
+        }
+
+        /* Optional: Styling the logo */
+        .logo {
+            height: 50px; /* Adjust the logo size as needed */
+            vertical-align: middle;
+        }
+		
+		
+		/* Mobile Adjustments */
+@media (max-width: 768px) {
+    /* Adjust navigation bar for mobile screens */
+    nav {
+        padding: 5px 10px; /* Further reduce padding */
+    }
+
+    .nav-link {
+        font-size: 8px; /* Reduce font size even more for mobile */
+        padding: 1px 0.1px; /* Reduced padding for nav links */
+    }
+
+    .logo {
+        height: 30px; /* Reduce logo size even further */
+    }
+ html, body {
+        height: 100%; /* Set both html and body to 100% height */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+
+        /* Page container */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto 0; /* Adjust margin-top to account for the navbar height */
+            padding: 20px;
+            background:white;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            color: green;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .header img.logo-resize {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            width: 200px; /* Default width, adjust as needed */
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            background-color: #ffffff; /* White background for gallery items */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .gallery-item .description {
+            padding: 10px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .gallery-item .description p {
+            font-size: 1em;
+            color: #333;
+        }
+
+        @media screen and (max-width: 768px) {
+            .gallery-item {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+ <header>
+        <nav>
+            <table width="100%" bgcolor="#000" cellpadding="10">
+                <tr>
+                    <td align="center">
+                        <a href="home page.html" class="nav-link">Home</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="about us.html" class="nav-link">About Us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <img src="bmc cart logo.png" alt="Logo" class="logo">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="contact us.html" class="nav-link">Contact Us</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="booknow.html" class="nav-link">BOOK NOW</a>
+                    </td>
+                </tr>
+            </table>
+        </nav>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+        <div class="header">
+            <h1>Clear Kayak Adventures</h1>
+            <img src="bmc kayak logo.png" alt="Clear Kayak Logo" class="logo-resize">
+            <p>
+                <h3>Crystal view clear kayak Drone Photography is an amazing experience that is awaiting your arrival here in Grand Turk. Our team offers exquisite photos and videos that exceed your expectations.</h3>
+            </p>
+        </div>
+
+        <div class="gallery">
+            <!-- Gallery Item 1 -->
+            <div class="gallery-item">
+                <img src="kayak1.jpg" alt="Clear Kayak Ride 1">
+                <div class="description">
+                    <p>Experience the underwater world in clarity!</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 2 -->
+            <div class="gallery-item">
+                <img src="kayak2.jpg" alt="Clear Kayak Ride 2">
+                <div class="description">
+                    <p>Glide over serene waters and discover hidden wonders.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 3 -->
+            <div class="gallery-item">
+                <img src="kayak3.jpg" alt="Clear Kayak Ride 3">
+                <div class="description">
+                    <p>A unique adventure for nature enthusiasts.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 4 -->
+            <div class="gallery-item">
+                <img src="kayak4.jpg" alt="Clear Kayak Ride 4">
+                <div class="description">
+                    <p>Crystal clear waters make for the perfect adventure.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 5 -->
+            <div class="gallery-item">
+                <img src="kayak5.jpg" alt="Clear Kayak Ride 5">
+                <div class="description">
+                    <p>Kayaking through the stunning turquoise waters.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 6 -->
+            <div class="gallery-item">
+                <img src="kayak6.jpg" alt="Clear Kayak Ride 6">
+                <div class="description">
+                    <p>Adventure awaits at every turn of the kayak.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 7 -->
+            <div class="gallery-item">
+                <img src="kayak7.jpg" alt="Clear Kayak Ride 7">
+                <div class="description">
+                    <p>Explore the depths of the ocean with clear views.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 8 -->
+            <div class="gallery-item">
+                <img src="kayak8.jpg" alt="Clear Kayak Ride 8">
+                <div class="description">
+                    <p>The ultimate experience in clear kayaking.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 9 -->
+            <div class="gallery-item">
+                <img src="kayak9.jpg" alt="Clear Kayak Ride 9">
+                <div class="description">
+                    <p>Get close to nature with every paddle stroke.</p>
+                </div>
+            </div>
+
+            <!-- Gallery Item 10 -->
+            <div class="gallery-item">
+                <img src="kayak10.jpg" alt="Clear Kayak Ride 10">
+                <div class="description">
+                    <p>Enjoy the best views of Grand Turk's coastline.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
