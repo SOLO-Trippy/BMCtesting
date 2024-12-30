@@ -334,7 +334,7 @@
     <h3 class="plan-title">CLEAR KAYAK</h3>
 
     <!-- Platinum Plan -->
-    <section class="third lift plan-tier" onclick="selectPlan('CLEAR KAYAK PLATINUM', 8 POSES, '80 PHOTOS/VIDEOS')">
+<section class="third lift plan-tier" onclick="selectPlan('CLEAR KAYAK PLATINUM', '150','8 POSES 80 PHOTOS/VIDEOS')">
         <h3 style="background-color:#E5E4E2; display: flex; align-items: center; justify-content: center;">PLATINUM <img src="plat1.png" alt="Transparent Image" style="height: 50px; margin-left: 10px;"></h3>
         <h5>
             <sup class="superscript" style="font-size: 4em;">$</sup>
@@ -345,7 +345,7 @@
     </section>
 
     <!-- Gold Plan -->
-    <section class="third lift plan-tier" onclick="selectPlan('CLEAR KAYAK GOLD', 6 POSES, '60 PHOTOS/VIDEOS')">
+    <section class="third lift plan-tier" onclick="selectPlan('CLEAR KAYAK GOLD', '100', '6 POSES 60 PHOTOS/VIDEOS')">
         <h3 style="background-color:Gold; display: flex; align-items: center; justify-content: center;">GOLD <img src="gold1.png" alt="Transparent Image" style="height: 50px; margin-left: 10px;"></h3>
         <h5>
             <sup class="superscript" style="font-size: 4em;">$</sup>
@@ -356,13 +356,13 @@
     </section>
 
     <!-- Silver Plan -->
-    <section class="third lift plan-tier" onclick="selectPlan('CLEAR KAYAK SILVER', 4, '40 PHOTOS/VIDEOS')">
+    <section class="third lift plan-tier" onclick="selectPlan('CLEAR KAYAK SILVER', '50', '4 POSES 40 PHOTOS/VIDEOS')">
         <h3 style="background-color:#C0C0C0; display: flex; align-items: center; justify-content: center;">SILVER <img src="sliver1.png" alt="Transparent Image" style="height: 50px; margin-left: 10px;"></h3>
         <h5>
             <sup class="superscript" style="font-size: 4em;">$</sup>
             <span class="plan-price">50</span>
         </h5>
-        <li><strong>4</strong> 40 PHOTOS/VIDEOS</li>
+        <li><strong>4 POSES</strong> 40 PHOTOS/VIDEOS</li>
         <a href="#" class="book-now-btn" onclick="bookNow()">Book Now</a>
     </section>
 </div>
@@ -370,10 +370,18 @@
 
  <script>
     let selectedPlanMessage = ''; // Variable to store the selected plan message
+    let planSelected = false; // Flag to check if a plan has already been selected
 
     function selectPlan(planTitle, planPrice, planDuration) {
+        // If a plan has already been selected, show the refresh message
+        if (planSelected) {
+            alert("Please refresh the page if you want to book another plan.");
+            return; // Exit the function if a plan is already selected
+        }
+
         // Create a message based on the selected plan
         selectedPlanMessage = `I want to book the ${planTitle} plan. I'm willing to pay $${planPrice} and for ${planDuration}.`;
+        planSelected = true; // Set the flag to true, indicating a plan has been selected
     }
 
     function bookNow() {
@@ -391,6 +399,9 @@
         }
     }
 </script>
+
+
+
 
 	
 	
